@@ -4,3 +4,5 @@ Timestamp: Wed Oct 12 2022 12:10:28 GMT-0500 (Central Daylight Time)
 URL: /favicon.ico
 Timestamp: Wed Oct 12 2022 12:10:28 GMT-0500 (Central Daylight Time)
 
+::ffff:127.0.0.1 - - [14/Oct/2022:16:28:27 +0000] "GET / HTTP/1.1" 200 21 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
+::ffff:127.0.0.1 - - [14/Oct/2022:16:28:27 +0000] "GET /favicon.ico HTTP/1.1" 404 150 "http://127.0.0.1:8080/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36"
