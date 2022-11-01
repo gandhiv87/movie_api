@@ -20,12 +20,12 @@ app.use(morgan('common', {stream: accessLogStream}));
 let users = [
   {
     id: 1,
-    name: "Ash",
+    name: 'Ash',
     favoriteMovies: []
   },
   {
     id: 2,
-    name: "Leon",
+    name: 'Leon',
     favoriteMovies: ["The Godfather"]
   },
 ];
