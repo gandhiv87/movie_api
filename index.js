@@ -12,6 +12,11 @@ const app = express();
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'log.txt'),
   {flags: 'a'})
 
+app.use(bodyParser.json());
+
+// setup the logger
+app.use(morgan('common', {stream: accessLogStream}));
+
 let users = [
   {
     id: 1,
@@ -27,32 +32,32 @@ let users = [
 
 let movies = [
   {
-    "Title": "xxx",
-    "Description": "",
+    "Title": "The Dark Knight",
+    "Description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
     "Genre": {
-      "Name": "Drama",
-      "Description":"."
+      "Name": "Action",
+      "Description":"Action film is a film genre in which the protagonist is thrust into a series of events that typically involve violence and physical feats."
     },
     "Director":{
-      "Name":"",
-      "Bio":"",
-      "Birth":1939,
+      "Name":"Christopher Nolan",
+      "Bio":"Best known for his cerebral, often nonlinear, storytelling, acclaimed writer-director Christopher Nolan has gone from low-budget independent films to working on some of the biggest blockbusters ever made.",
+      "Birth":1970,
     },
-    "ImageURL":"",
+    "ImageURL":"https://m.media-amazon.com/images/M/MV5BNjE3NDQyOTYyMV5BMl5BanBnXkFtZTcwODcyODU2Mw@@._V1_UY317_CR7,0,214,317_AL_.jpg",
     "Featured": false
   },
 
   {
-    "Title": "yyy",
-    "Description": "",
+    "Title": "The Shawshank Redemption",
+    "Description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
     "Genre": {
-      "Name": "",
-      "Description":""
+      "Name": "Drama",
+      "Description":"Drama is a category or genre of narrative fiction (or semi-fiction) intended to be more serious than humorous in tone."
     },
     "Director":{
-      "Name":"",
-      "Bio":"",
-      "Birth":1939,
+      "Name":"Frank Darabont",
+      "Bio":"Three-time Oscar nominee Frank Darabont was born in a refugee camp in 1959 in Montbeliard, France, the son of Hungarian parents who had fled Budapest during the failed 1956 Hungarian revolution.",
+      "Birth":1959,
     },
     "ImageURL":"",
     "Featured": false
@@ -75,13 +80,8 @@ let movies = [
   },
 ];
 
-// setup the logger
-app.use(morgan('common', {stream: accessLogStream}));
-
 // Serving static files
 app.use(express.static('public'));
-
-app.use(bodyParser.json());
 
 // Get requests
 app.get('/', (req, res) => {
