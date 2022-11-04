@@ -63,3 +63,17 @@ Timestamp: Wed Oct 12 2022 12:10:28 GMT-0500 (Central Daylight Time)
 ::1 - - [03/Nov/2022:21:32:42 +0000] "DELETE /users/Paul%20Doe/movies/The%20Ineption HTTP/1.1" 404 180
 ::1 - - [03/Nov/2022:21:33:11 +0000] "GET /users HTTP/1.1" 201 864
 ::1 - - [03/Nov/2022:21:34:02 +0000] "DELETE /users/Paul%20Doe HTTP/1.1" 200 21
+::1 - - [04/Nov/2022:13:33:39 +0000] "GET /movies HTTP/1.1" 401 -
+::1 - - [04/Nov/2022:13:41:42 +0000] "GET /users HTTP/1.1" 401 -
+::1 - - [04/Nov/2022:13:48:31 +0000] "POST /login?Username=Michelle%20Doe&Password=5467 HTTP/1.1" 200 571
+::1 - - [04/Nov/2022:13:49:20 +0000] "GET /movies HTTP/1.1" 401 -
+::1 - - [04/Nov/2022:13:49:47 +0000] "GET /movies HTTP/1.1" 401 -
+::1 - - [04/Nov/2022:13:50:37 +0000] "GET /login?Username=Michelle%20Doe&Password=5467 HTTP/1.1" 404 144
+::1 - - [04/Nov/2022:13:50:41 +0000] "GET /login?Username=Michelle%20Doe&Password=5467 HTTP/1.1" 404 144
+::1 - - [04/Nov/2022:13:51:00 +0000] "POST /login?Username=Michelle%20Doe&Password=5467 HTTP/1.1" 200 571
+::1 - - [04/Nov/2022:13:55:00 +0000] "GET /movies HTTP/1.1" 201 8718
+::1 - - [04/Nov/2022:13:55:42 +0000] "GET /users HTTP/1.1" 201 663
+::1 - - [04/Nov/2022:13:56:22 +0000] "GET /movies/The%20Dark%20Knight HTTP/1.1" 200 891
+::1 - - [04/Nov/2022:13:56:57 +0000] "GET /movies/genre/Action HTTP/1.1" 200 172
+::1 - - [04/Nov/2022:13:57:32 +0000] "GET /users HTTP/1.1" 201 663
+::1 - - [04/Nov/2022:13:58:29 +0000] "GET /users/John%20Doe HTTP/1.1" 200 160
